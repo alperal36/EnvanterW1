@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Envanter Takip</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script>
+    function resetForm() {
+      document.getElementById("demirbasAdi").value = "";
+      document.getElementById("marka").value = "";
+      document.getElementById("model").value = "";
+      document.getElementById("alimTarihi").value = "";
+      document.getElementById("teslimEden").value = "";
+      document.getElementById("teslimAlan").value = "";
+      document.getElementById("seriNo").value = "";
+      document.getElementById("durum").value = "";
+      document.getElementById("aciklama").value = "";
+    }
+  </script>
+</head>
+<body>
+<div class="kutucuk">
+    <h1>Envanter Takip</h1>
+</div>
+
+<form action="arama-sonucu.php" method="get">
+  <input type="text" name="sorgu" placeholder="Arama yapın...">
+  <button type="submit">Ara</button>
+</form>
+
+<form method="post" action="kaydet.php">
+  <div class="panel">
+    <div class="form-group">
+      <label for="demirbasAdi">Demirbaş Adı:</label>
+      <input type="text" id="demirbasAdi" name="demirbasAdi" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="marka">Marka:</label>
+      <input type="text" id="marka" name="marka" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="model">Model:</label>
+      <input type="text" id="model" name="model" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alimTarihi">Alım Tarihi:</label>
+      <input type="text" id="alimTarihi" name="alimTarihi" required>
+    </div>
+
+    <div class="form-group">
+      <label for="teslimEden">Teslim Eden:</label>
+      <input type="text" id="teslimEden" name="teslimEden" required>
+    </div>
+
+    <div class="form-group">
+      <label for="teslimAlan">Teslim Alan:</label>
+      <input type="text" id="teslimAlan" name="teslimAlan" required>
+    </div>
+
+     <div class="form-group">
+      <label for="seriNo">Seri Numarası:</label>
+      <input type="text" id="seriNo" name="seriNo" required>
+    </div>
+
+    <div class="form-group">
+       <label for="durum">Durum:</label>
+        <select name="durum" id="durum" required>
+            <option value="Yeni">Yeni</option>
+            <option value="Kullanılmış">Kullanılmış</option>
+        </select>
+        <label for="aciklama">Açıklama:</label>
+      <textarea id="aciklama" name="aciklama" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Kaydet</button>
+      <button type="button" class="reset-button" onclick="resetForm()">Tümünü Temizle</button>
+    </div>
+  </div>
+ </form> 
+ <div class="list">
+   <a href="bilgileri_goruntule.php"><button type="submit">Listele</button></a>
+ </div>
+
+<a href="https://mobiliz.com.tr/">
+ <img src="mobiliz.png" alt="mobiliz" class="resim-stili">
+</a>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" id="photo">
+    <input type="submit" value="Yükle">
+  </form>
+
+</body>
+</html>

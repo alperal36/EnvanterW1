@@ -1,0 +1,30 @@
+XAMPP i kurun EnvanterW1 içindeki dosyaları c diskinde xampp dosyasının içinde htdocs klasörüne atın ve ordaki index.php dosyasını silin.xampp kontrol panelinden apache ve mysql çalıştırarak envanter programına erişebilirsiniz.
+
+Veri Tabanını Aktif Hale Getirmek İçin;
+
+XAMPP kontrol panelini açın ve Apache ve MySQL'i başlatın.
+Tarayıcınızı açın ve http://localhost/phpmyadmin adresine gidin.(Konrol panelinde mysql in yanındaki admin butonunada basabilirsiniz.)
+Sol taraftaki menüden "Yeni oluştur" seçeneğine tıklayın.
+Yeni bir veritabanı adı belirleyin, örneğin "veritabani".
+"utf8_general_ci" seçeneğini kullanarak karakter seti ve sıralama ayarlarını belirleyin.
+"Oluştur" düğmesine tıklayarak veritabanını oluşturun.
+Sol taraftaki menüden oluşturduğunuz "veritabani" veritabanını seçin.
+Üst menüdeki "SQL" sekmesine tıklayın.
+Aşağıdaki SQL sorgusunu yapıştırın ve çalıştırın:
+
+CREATE TABLE urunler (
+  id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  demirbas_adi VARCHAR(255) NOT NULL,
+  marka VARCHAR(255) NOT NULL,
+  model VARCHAR(255) NOT NULL,
+  alim_tarihi DATE NOT NULL,
+  teslim_eden VARCHAR(255) NOT NULL,
+  teslim_alan VARCHAR(255) NOT NULL,
+  durum VARCHAR(255) NOT NULL,
+  seri_no VARCHAR(255) NOT NULL,
+  aciklama VARCHAR(255) NOT NULL
+);
+
+Artık veri tabanınız aktif, verilerinizi burada tutabilirsiniz.
+
+Dosya seç butonundan dosya kaydetmek için xampp/htdocs klasörüne uploads adında klasör oluşturmanız yeterli.
